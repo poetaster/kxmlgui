@@ -50,9 +50,9 @@ KDE Frameworks 5 Tier 3 solution for user-configurable main windows.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       kf5-kconfig-devel >= %{kf5_version}
-Requires:       kf5-kconfigwidgets-devel >= %{kf5_version}
-Requires:       qt5-qtbase-devel
+Requires:       opt-kf5-kconfig-devel >= %{kf5_version}
+Requires:       opt-kf5-kconfigwidgets-devel >= %{kf5_version}
+Requires:       opt-qt5-qtbase-devel
 %description    devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
