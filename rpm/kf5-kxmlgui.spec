@@ -33,7 +33,7 @@ BuildRequires:  opt-qt5-qttools-devel
 BuildRequires:  opt-qt5-qtbase-private-devel
 
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
-Requires: opt-qt5-qtbase-gui >= %{kf5_version}
+Requires: opt-qt5-qtbase-gui
 Requires: opt-kf5-kconfig >= %{kf5_version}
 Requires: opt-kf5-kconfigwidgets >= %{kf5_version}
 Requires: opt-kf5-kcoreaddons >= %{kf5_version}
