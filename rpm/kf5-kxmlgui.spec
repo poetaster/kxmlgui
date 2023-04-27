@@ -13,6 +13,9 @@ URL:     https://invent.kde.org/frameworks/%{framework}
 
 Source0:		%{name}-%{version}.tar.bz2
 
+# filter plugin provides
+%global __provides_exclude_from ^(%{_opt_kf5_qtplugindir}/.*\\.so)$
+
 BuildRequires:  opt-extra-cmake-modules >= %{majmin}
 BuildRequires:  opt-kf5-attica-devel >= %{majmin}
 BuildRequires:  opt-kf5-kconfig-devel >= %{majmin}
@@ -32,7 +35,7 @@ BuildRequires:  opt-kf5-rpm-macros
 BuildRequires:  opt-qt5-qtbase-devel
 BuildRequires:  opt-qt5-qttools-devel
 
-BuildRequires:  cmake(Qt5UiPlugin)
+#BuildRequires:  cmake(Qt5UiPlugin)
 
 %description
 KDE Frameworks 5 Tier 3 solution for user-configurable main windows.
@@ -61,7 +64,7 @@ pushd build
 
 %_opt_cmake_kf5 ../ \
   -DWITH_X11=OFF \
-
+  -DFORCE_DISABLE_KGLOBALACCEL=ON
 %make_build
 
 popd
