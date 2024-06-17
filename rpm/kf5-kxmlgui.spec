@@ -66,19 +66,11 @@ developing applications that use %{name}.
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-mkdir -p build
-pushd build
-
-%_opt_cmake_kf5 ../ \
-  -DFORCE_DISABLE_KGLOBALACCEL=ON
-%make_build
-
-popd
+%_opt_cmake_kf5 -DFORCE_DISABLE_KGLOBALACCEL=ON
+%cmake_build
 
 %install
-pushd build
-make DESTDIR=%{buildroot} install
-popd
+%cmake_install
 
 %find_lang_kf5 kxmlgui5_qt
 
